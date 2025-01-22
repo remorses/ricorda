@@ -5,7 +5,8 @@
     "main": "dist/index.js",
     "type": "module",
     "scripts": {
-        "prepublishOnly": "tsc"
+        "build": "rm -rf dist && tsc",
+        "prepublishOnly": "pnpm build"
     },
     "keywords": [],
     "author": "remorses <beats.by.morse@gmail.com>",

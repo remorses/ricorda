@@ -16,7 +16,7 @@
         "esModuleInterop": true,
         "noImplicitAny": false,
         "useUnknownInCatchVariables": false,
-        "sourceMap": true,
+        "sourceMap": false,
         "jsx": "react-jsx",
         "skipLibCheck": true,
     },
