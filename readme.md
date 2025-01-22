@@ -1,13 +1,13 @@
-# persistorm
+# ricorda
 
 ```
-npm i persistorm
+npm i ricorda
 ```
 
 # Usage
 
 ```tsx
-import { persistForm } from 'persistorm'
+import { persistForm } from 'ricorda'
 
 function MyForm() {
     return (

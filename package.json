@@ -1,5 +1,5 @@
 {
-    "name": "persistorm",
+    "name": "ricorda",
     "version": "0.0.0",
     "description": "Persist forms in local storage",
     "main": "dist/index.js",
