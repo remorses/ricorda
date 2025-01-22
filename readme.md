@@ -7,13 +7,13 @@ npm i persistorm
 # Usage
 
 ```tsx
-import FormPersistence from 'persistorm'
+import { persistForm } from 'persistorm'
 
 function MyForm() {
     return (
         <form
             ref={(form) => {
-                const cleanup = FormPersistence.persist(form)
+                const cleanup = persistForm(form)
                 return cleanup
             }}
             id='myForm'
