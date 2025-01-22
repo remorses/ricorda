@@ -111,6 +111,8 @@ const FormPersistence = (function () {
     }
 
     function pushToArray(dict: FormData, key: string, value: any) {
+        if (value === '') return
+        
         if (!(key in dict)) {
             dict[key] = []
         }
