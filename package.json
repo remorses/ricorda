@@ -3,6 +3,7 @@
     "version": "0.0.0",
     "description": "Persist forms in local storage",
     "main": "dist/index.js",
+    "type": "module",
     "scripts": {
         "prepublishOnly": "tsc"
     },
