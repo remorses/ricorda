@@ -31,15 +31,27 @@ const FormPersistence = (function () {
             saveForm()
         }
 
+        // Add popstate listener for SPA navigation
+        window.addEventListener('popstate', saveForm)
+        // Keep the unload listeners for actual page leaves/refreshes
         window.addEventListener('beforeunload', saveFormBeforeUnload)
         window.addEventListener('unload', saveForm)
 
         if (!config.saveOnSubmit) {
             form.addEventListener('submit', () => {
+                window.removeEventListener('popstate', saveForm)
                 window.removeEventListener('beforeunload', saveFormBeforeUnload)
                 window.removeEventListener('unload', saveForm)
                 clearStorage(form, config)
             })
+        }
+
+        // Return both cleanup and save functions
+        return () => {
+            saveForm()
+            window.removeEventListener('popstate', saveForm)
+            window.removeEventListener('beforeunload', saveFormBeforeUnload)
+            window.removeEventListener('unload', saveForm)
         }
     }
 
@@ -112,7 +124,7 @@ const FormPersistence = (function () {
 
     function pushToArray(dict: FormData, key: string, value: any) {
         if (value === '') return
-        
+
         if (!(key in dict)) {
             dict[key] = []
         }
