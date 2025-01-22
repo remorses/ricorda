@@ -12,7 +12,11 @@ interface FormPersistenceOptions {
 interface FormData {
     [key: string]: any[]
 }
-function persist(form: HTMLFormElement, options: FormPersistenceOptions = {}) {
+
+export function persistForm(
+    form: HTMLFormElement,
+    options: FormPersistenceOptions = {},
+) {
     const config = {
         saveOnSubmit: false,
         ...options,

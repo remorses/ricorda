@@ -1,10 +1,10 @@
 {
     "name": "persistorm",
-    "version": "1.0.0",
+    "version": "0.0.0",
     "description": "Persist forms in local storage",
-    "main": "index.js",
+    "main": "dist/index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "prepublishOnly": "tsc"
     },
     "keywords": [],
     "author": "remorses <beats.by.morse@gmail.com>",
